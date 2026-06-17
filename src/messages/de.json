@@ -1,0 +1,121 @@
+{
+  "common": {
+    "appName": "Linkify Jobs",
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "back": "Zurück",
+    "next": "Weiter",
+    "search": "Suchen",
+    "noResults": "Keine Ergebnisse gefunden"
+  },
+  "nav": {
+    "home": "Startseite",
+    "jobs": "Stellenangebote",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "dashboard": "Dashboard",
+    "profile": "Profil",
+    "applications": "Bewerbungen",
+    "settings": "Einstellungen",
+    "logout": "Abmelden",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
+  },
+  "home": {
+    "hero": {
+      "title": "Finde deinen Traumjob mit KI",
+      "subtitle": "Beschreibe deinen idealen Job — unsere KI findet passende Stellen, füllt Bewerbungsformulare aus und schreibt dein Anschreiben.",
+      "searchPlaceholder": "z.B. React Developer in Berlin, 60k+",
+      "cta": "Jobs finden"
+    },
+    "features": {
+      "aiMatch": {
+        "title": "KI-Matching",
+        "description": "Intelligente Stellensuche basierend auf deinem Profil und Wünschen"
+      },
+      "autoApply": {
+        "title": "Auto-Bewerbung",
+        "description": "Formulare werden automatisch ausgefüllt — du bestätigst nur noch"
+      },
+      "coverLetter": {
+        "title": "KI-Anschreiben",
+        "description": "Personalisierte Anschreiben, abgestimmt auf Unternehmen und Stelle"
+      }
+    }
+  },
+  "auth": {
+    "loginTitle": "Anmelden",
+    "registerTitle": "Konto erstellen",
+    "continueWith": "Weiter mit {provider}",
+    "orContinueWith": "oder weiter mit",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "terms": "Mit der Anmeldung akzeptierst du unsere Nutzungsbedingungen und Datenschutzerklärung."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Willkommen zurück, {name}!",
+    "stats": {
+      "applications": "Bewerbungen",
+      "views": "Angesehene Stellen",
+      "matchScore": "Durchschn. Match",
+      "remaining": "Verbleibend"
+    },
+    "recentApplications": "Letzte Bewerbungen",
+    "noApplications": "Noch keine Bewerbungen. Starte deine Jobsuche!"
+  },
+  "profile": {
+    "title": "Profil",
+    "uploadCv": "Lebenslauf hochladen",
+    "uploadCvHint": "PDF oder DOCX, max. 5MB",
+    "skills": "Fähigkeiten",
+    "experience": "Berufserfahrung",
+    "education": "Ausbildung",
+    "preferences": "Präferenzen",
+    "salary": "Gehaltsvorstellung",
+    "locations": "Bevorzugte Standorte"
+  },
+  "jobs": {
+    "title": "Stellenangebote",
+    "matchScore": "Match-Score",
+    "filters": {
+      "location": "Standort",
+      "salary": "Gehalt",
+      "remote": "Remote",
+      "matchMin": "Min. Match-Score"
+    },
+    "apply": "Bewerben",
+    "applied": "Beworben",
+    "details": "Details ansehen",
+    "source": "Quelle",
+    "postedAt": "Veröffentlicht am"
+  },
+  "admin": {
+    "title": "Admin-Panel",
+    "analytics": "Analytik",
+    "portals": "Portale",
+    "users": "Benutzer",
+    "totalUsers": "Benutzer gesamt",
+    "totalJobs": "Stellen gesamt",
+    "totalApplications": "Bewerbungen gesamt",
+    "activePortals": "Aktive Portale"
+  },
+  "legal": {
+    "impressum": {
+      "title": "Impressum",
+      "according": "Angaben gemäß § 5 TMG"
+    },
+    "datenschutz": {
+      "title": "Datenschutzerklärung",
+      "intro": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst."
+    }
+  },
+  "footer": {
+    "rights": "© {year} Linkify Jobs. Alle Rechte vorbehalten.",
+    "madeWith": "Entwickelt mit KI in Deutschland"
+  }
+}

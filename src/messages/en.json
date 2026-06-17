@@ -1,0 +1,121 @@
+{
+  "common": {
+    "appName": "Linkify Jobs",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "noResults": "No results found"
+  },
+  "nav": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "login": "Sign In",
+    "register": "Sign Up",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "applications": "Applications",
+    "settings": "Settings",
+    "logout": "Sign Out",
+    "impressum": "Legal Notice",
+    "datenschutz": "Privacy Policy"
+  },
+  "home": {
+    "hero": {
+      "title": "Find Your Dream Job with AI",
+      "subtitle": "Describe your ideal job — our AI finds matching positions, fills out application forms, and writes your cover letter.",
+      "searchPlaceholder": "e.g. React Developer in Berlin, 60k+",
+      "cta": "Find Jobs"
+    },
+    "features": {
+      "aiMatch": {
+        "title": "AI Matching",
+        "description": "Intelligent job search based on your profile and preferences"
+      },
+      "autoApply": {
+        "title": "Auto-Apply",
+        "description": "Forms are filled automatically — just confirm and send"
+      },
+      "coverLetter": {
+        "title": "AI Cover Letter",
+        "description": "Personalized cover letters tailored to company and position"
+      }
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign In",
+    "registerTitle": "Create Account",
+    "continueWith": "Continue with {provider}",
+    "orContinueWith": "or continue with",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "terms": "By signing in, you agree to our Terms of Service and Privacy Policy."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}!",
+    "stats": {
+      "applications": "Applications",
+      "views": "Jobs Viewed",
+      "matchScore": "Avg. Match",
+      "remaining": "Remaining"
+    },
+    "recentApplications": "Recent Applications",
+    "noApplications": "No applications yet. Start your job search!"
+  },
+  "profile": {
+    "title": "Profile",
+    "uploadCv": "Upload Resume",
+    "uploadCvHint": "PDF or DOCX, max 5MB",
+    "skills": "Skills",
+    "experience": "Work Experience",
+    "education": "Education",
+    "preferences": "Preferences",
+    "salary": "Salary Expectations",
+    "locations": "Preferred Locations"
+  },
+  "jobs": {
+    "title": "Jobs",
+    "matchScore": "Match Score",
+    "filters": {
+      "location": "Location",
+      "salary": "Salary",
+      "remote": "Remote",
+      "matchMin": "Min. Match Score"
+    },
+    "apply": "Apply",
+    "applied": "Applied",
+    "details": "View Details",
+    "source": "Source",
+    "postedAt": "Posted on"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "analytics": "Analytics",
+    "portals": "Portals",
+    "users": "Users",
+    "totalUsers": "Total Users",
+    "totalJobs": "Total Jobs",
+    "totalApplications": "Total Applications",
+    "activePortals": "Active Portals"
+  },
+  "legal": {
+    "impressum": {
+      "title": "Legal Notice",
+      "according": "Information according to § 5 TMG"
+    },
+    "datenschutz": {
+      "title": "Privacy Policy",
+      "intro": "We take the protection of your personal data very seriously."
+    }
+  },
+  "footer": {
+    "rights": "© {year} Linkify Jobs. All rights reserved.",
+    "madeWith": "Built with AI in Germany"
+  }
+}
