@@ -77,7 +77,34 @@
     "education": "Ausbildung",
     "preferences": "Präferenzen",
     "salary": "Gehaltsvorstellung",
-    "locations": "Bevorzugte Standorte"
+    "locations": "Bevorzugte Standorte",
+    "cvUploadDrag": "Lebenslauf hierher ziehen oder klicken zum Auswählen",
+    "cvUploadParsing": "KI analysiert deinen Lebenslauf...",
+    "cvUploadSuccess": "Lebenslauf erfolgreich hochgeladen",
+    "parseWithAi": "Mit KI analysieren",
+    "addExperience": "Berufserfahrung hinzufügen",
+    "addEducation": "Ausbildung hinzufügen",
+    "saveProfile": "Profil speichern"
+  },
+  "applications": {
+    "title": "Meine Bewerbungen",
+    "status": {
+      "draft": "Entwurf",
+      "prefilled": "Vorbefüllt",
+      "submitted": "Eingereicht",
+      "confirmed": "Bestätigt",
+      "rejected": "Abgelehnt"
+    },
+    "generateCoverLetter": "Anschreiben generieren",
+    "generating": "Wird generiert...",
+    "coverLetterLanguage": "Sprache des Anschreibens",
+    "reviewAndSubmit": "Überprüfen & Absenden",
+    "submitApplication": "Bewerbung absenden",
+    "applicationSubmitted": "Bewerbung erfolgreich eingereicht!",
+    "matchScore": "Match-Score",
+    "appliedOn": "Beworben am",
+    "noApplications": "Noch keine Bewerbungen",
+    "backToJob": "Zurück zur Stelle"
   },
   "jobs": {
     "title": "Stellenangebote",

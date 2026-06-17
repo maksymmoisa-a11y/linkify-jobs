@@ -77,7 +77,34 @@
     "education": "Education",
     "preferences": "Preferences",
     "salary": "Salary Expectations",
-    "locations": "Preferred Locations"
+    "locations": "Preferred Locations",
+    "cvUploadDrag": "Drag your resume here or click to select",
+    "cvUploadParsing": "AI is analyzing your resume...",
+    "cvUploadSuccess": "Resume uploaded successfully",
+    "parseWithAi": "Parse with AI",
+    "addExperience": "Add Experience",
+    "addEducation": "Add Education",
+    "saveProfile": "Save Profile"
+  },
+  "applications": {
+    "title": "My Applications",
+    "status": {
+      "draft": "Draft",
+      "prefilled": "Pre-filled",
+      "submitted": "Submitted",
+      "confirmed": "Confirmed",
+      "rejected": "Rejected"
+    },
+    "generateCoverLetter": "Generate Cover Letter",
+    "generating": "Generating...",
+    "coverLetterLanguage": "Cover Letter Language",
+    "reviewAndSubmit": "Review & Submit",
+    "submitApplication": "Submit Application",
+    "applicationSubmitted": "Application submitted successfully!",
+    "matchScore": "Match Score",
+    "appliedOn": "Applied on",
+    "noApplications": "No applications yet",
+    "backToJob": "Back to Job"
   },
   "jobs": {
     "title": "Jobs",
