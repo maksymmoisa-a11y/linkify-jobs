@@ -8,6 +8,7 @@ import {
   jsonb,
   boolean,
   index,
+  uniqueIndex,
   pgEnum,
 } from "drizzle-orm/pg-core";
 
@@ -142,6 +143,11 @@ export const jobs = pgTable(
     isActive: boolean("is_active").default(true).notNull(),
   },
   (table) => [
+    // Composite unique so upsert on (external_id, source_portal) works
+    uniqueIndex("idx_jobs_external_id_portal").on(
+      table.externalId,
+      table.sourcePortal
+    ),
     index("idx_jobs_source").on(table.sourcePortal),
     index("idx_jobs_location").on(table.location),
     index("idx_jobs_active").on(table.isActive),
