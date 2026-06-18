@@ -16,6 +16,11 @@ export default async function middleware(request: NextRequest) {
   // Strip locale prefix to check path
   const pathWithoutLocale = pathname.replace(/^\/(de|en)/, "") || "/";
 
+  // Admin login page is public (hidden URL)
+  if (pathWithoutLocale === "/myhome/login") {
+    return intlMiddleware(request);
+  }
+
   // Check if path is protected
   const isProtected = PROTECTED_PATHS.some(
     (p) => pathWithoutLocale === p || pathWithoutLocale.startsWith(p + "/")
