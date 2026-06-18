@@ -45,9 +45,9 @@ function CogIcon() {
 
 const navItems: NavItem[] = [
   { href: "/dashboard", labelKey: "dashboard", icon: <HomeIcon /> },
-  { href: "/dashboard/profile", labelKey: "profile", icon: <UserIcon /> },
-  { href: "/dashboard/applications", labelKey: "applications", icon: <ClipboardIcon /> },
-  { href: "/dashboard/settings", labelKey: "settings", icon: <CogIcon /> },
+  { href: "/profile", labelKey: "profile", icon: <UserIcon /> },
+  { href: "/applications", labelKey: "applications", icon: <ClipboardIcon /> },
+  { href: "/settings", labelKey: "settings", icon: <CogIcon /> },
 ];
 
 export function DashboardSidebar() {
