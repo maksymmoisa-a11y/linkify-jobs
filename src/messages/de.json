@@ -190,5 +190,34 @@
   "footer": {
     "rights": "© {year} Linkify Jobs. Alle Rechte vorbehalten.",
     "madeWith": "Entwickelt mit KI in Deutschland"
+  },
+  "cookies": {
+    "message": "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Einige Cookies sind notwendig, damit die Website funktioniert.",
+    "acceptAll": "Alle akzeptieren",
+    "essentialOnly": "Nur notwendige",
+    "settings": "Einstellungen"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "languageHint": "Wähle deine bevorzugte Sprache",
+    "notifications": "E-Mail-Benachrichtigungen",
+    "notifyNewJobs": "Neue passende Stellen",
+    "notifyApplicationStatus": "Bewerbungsstatus-Updates",
+    "notifyWeeklyDigest": "Wöchentliche Zusammenfassung",
+    "dataPrivacy": "Daten & Datenschutz",
+    "exportData": "Meine Daten exportieren",
+    "exportDataHint": "Alle deine Daten als JSON-Datei herunterladen (DSGVO Art. 20)",
+    "exportingData": "Exportiert...",
+    "deleteAccount": "Konto löschen",
+    "deleteAccountHint": "Alle deine Daten werden unwiderruflich gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.",
+    "deleteConfirmTitle": "Konto wirklich löschen?",
+    "deleteConfirmMessage": "Gib DELETE ein, um zu bestätigen:",
+    "deleteConfirmButton": "Konto endgültig löschen",
+    "deleting": "Wird gelöscht...",
+    "rateLimit": "Nutzungslimit",
+    "rateLimitUsed": "{used} von {limit} Stellenaufrufen diesen Monat verbraucht",
+    "rateLimitResets": "Zurücksetzung am {date}",
+    "cancel": "Abbrechen"
   }
 }

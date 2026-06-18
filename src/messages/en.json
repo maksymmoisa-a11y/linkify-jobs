@@ -190,5 +190,34 @@
   "footer": {
     "rights": "© {year} Linkify Jobs. All rights reserved.",
     "madeWith": "Built with AI in Germany"
+  },
+  "cookies": {
+    "message": "This website uses cookies to improve your experience. Some cookies are necessary for the website to function.",
+    "acceptAll": "Accept All",
+    "essentialOnly": "Essential Only",
+    "settings": "Settings"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "languageHint": "Choose your preferred language",
+    "notifications": "Email Notifications",
+    "notifyNewJobs": "New matching jobs",
+    "notifyApplicationStatus": "Application status updates",
+    "notifyWeeklyDigest": "Weekly digest",
+    "dataPrivacy": "Data & Privacy",
+    "exportData": "Export my data",
+    "exportDataHint": "Download all your data as a JSON file (GDPR Art. 20)",
+    "exportingData": "Exporting...",
+    "deleteAccount": "Delete Account",
+    "deleteAccountHint": "All your data will be permanently deleted. This action cannot be undone.",
+    "deleteConfirmTitle": "Delete account permanently?",
+    "deleteConfirmMessage": "Type DELETE to confirm:",
+    "deleteConfirmButton": "Delete account permanently",
+    "deleting": "Deleting...",
+    "rateLimit": "Usage Limit",
+    "rateLimitUsed": "{used} of {limit} job views used this month",
+    "rateLimitResets": "Resets on {date}",
+    "cancel": "Cancel"
   }
 }
