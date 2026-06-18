@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { LoginButtons } from "@/components/auth/login-buttons";
+import { DevLoginForm } from "@/components/auth/dev-login-form";
 
 export default function AuthPage() {
   const t = useTranslations("auth");
@@ -29,6 +30,9 @@ export default function AuthPage() {
 
           {/* OAuth Buttons */}
           <LoginButtons callbackUrl="/dashboard" />
+
+          {/* Dev Login */}
+          <DevLoginForm />
 
           {/* Terms */}
           <p className="mt-6 text-center text-xs text-gray-400">{t("terms")}</p>
