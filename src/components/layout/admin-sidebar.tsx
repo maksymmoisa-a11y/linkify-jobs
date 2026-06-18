@@ -44,7 +44,7 @@ function CogIcon() {
 }
 
 const navItems: NavItem[] = [
-  { href: "/admin", labelKey: "analytics", icon: <ChartIcon /> },
+  { href: "/myhome", labelKey: "analytics", icon: <ChartIcon /> },
   { href: "/admin/portals", labelKey: "portals", icon: <GlobeIcon /> },
   { href: "/admin/users", labelKey: "users", icon: <UsersIcon /> },
   { href: "/admin/settings", labelKey: "settings", icon: <CogIcon /> },
@@ -56,7 +56,7 @@ export function AdminSidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   function isActive(href: string) {
-    return pathname === href || (href !== "/admin" && pathname.startsWith(href));
+    return pathname === href || (href !== "/myhome" && pathname.startsWith(href));
   }
 
   const NavContent = () => (

@@ -38,7 +38,7 @@ interface LoginButtonsProps {
   callbackUrl?: string;
 }
 
-export function LoginButtons({ callbackUrl = "/dashboard" }: LoginButtonsProps) {
+export function LoginButtons({ callbackUrl = "/app" }: LoginButtonsProps) {
   const t = useTranslations("auth");
 
   async function handleGoogle() {

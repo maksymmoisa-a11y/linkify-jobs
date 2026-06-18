@@ -29,7 +29,7 @@ export default function AuthPage() {
           </div>
 
           {/* OAuth Buttons */}
-          <LoginButtons callbackUrl="/dashboard" />
+          <LoginButtons callbackUrl="/app" />
 
           {/* Dev Login */}
           <DevLoginForm />

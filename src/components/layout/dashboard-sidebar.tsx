@@ -44,10 +44,10 @@ function CogIcon() {
 }
 
 const navItems: NavItem[] = [
-  { href: "/dashboard", labelKey: "dashboard", icon: <HomeIcon /> },
-  { href: "/profile", labelKey: "profile", icon: <UserIcon /> },
-  { href: "/applications", labelKey: "applications", icon: <ClipboardIcon /> },
-  { href: "/settings", labelKey: "settings", icon: <CogIcon /> },
+  { href: "/app", labelKey: "dashboard", icon: <HomeIcon /> },
+  { href: "/app/profile", labelKey: "profile", icon: <UserIcon /> },
+  { href: "/app/applications", labelKey: "applications", icon: <ClipboardIcon /> },
+  { href: "/app/settings", labelKey: "settings", icon: <CogIcon /> },
 ];
 
 export function DashboardSidebar() {
@@ -56,7 +56,7 @@ export function DashboardSidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   function isActive(href: string) {
-    return pathname === href || (href !== "/dashboard" && pathname.startsWith(href));
+    return pathname === href || (href !== "/app" && pathname.startsWith(href));
   }
 
   const NavContent = () => (

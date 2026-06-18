@@ -27,14 +27,14 @@ export function DevLoginForm() {
       <div className="flex gap-2">
         <button
           type="button"
-          onClick={() => loginAs("test@linkify-jobs.de", "/de/dashboard")}
+          onClick={() => loginAs("test@linkify-jobs.de", "/de/app")}
           className="flex-1 rounded-lg bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-600 active:bg-orange-700 transition-colors cursor-pointer"
         >
           Als Kandidat
         </button>
         <button
           type="button"
-          onClick={() => loginAs("admin@linkify-jobs.de", "/de/admin")}
+          onClick={() => loginAs("admin@linkify-jobs.de", "/de/myhome")}
           className="flex-1 rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600 active:bg-red-700 transition-colors cursor-pointer"
         >
           Als Admin
