@@ -36,41 +36,18 @@ export default async function AuthPage() {
             <p className="mt-2 text-sm text-gray-500">{t("noAccount")}</p>
           </div>
 
-          <div className="flex flex-col gap-3">
-            {/* Google — GET redirect to Auth.js signin flow (handles CSRF internally) */}
-            <a
-              href="/api/auth/signin/google?callbackUrl=/app"
-              className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors"
-            >
-              <GoogleIcon />
-              {t("continueWith", { provider: "Google" })}
-            </a>
-
-            {/* LinkedIn */}
-            <a
-              href="/api/auth/signin/linkedin?callbackUrl=/app"
-              className="flex w-full items-center justify-center gap-3 rounded-lg border border-transparent bg-[#0A66C2] px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-[#004182] transition-colors"
-            >
-              <LinkedInIcon />
-              {t("continueWith", { provider: "LinkedIn" })}
-            </a>
-          </div>
+          {/* Login — Auth.js built-in signin handles CSRF for all providers */}
+          <a
+            href="/api/auth/signin?callbackUrl=/de/app"
+            className="flex w-full items-center justify-center gap-3 rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
+          >
+            {t("loginTitle")}
+          </a>
 
           {/* Guest */}
           <div className="mt-4">
             <a href="/de/jobs" className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
               Als Gast fortfahren
-            </a>
-          </div>
-
-          {/* Dev Login — uses Auth.js built-in signin page which handles CSRF */}
-          <div className="mt-6 border-t border-gray-200 pt-6">
-            <p className="mb-3 text-center text-xs font-medium text-orange-600">Dev Login (nur Entwicklung)</p>
-            <a
-              href="/api/auth/signin?callbackUrl=/de/app"
-              className="flex w-full items-center justify-center rounded-lg bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-600 transition-colors"
-            >
-              Dev Login
             </a>
           </div>
 
