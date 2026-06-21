@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useRouter, usePathname } from "@/lib/i18n/routing";
 import { useLocale } from "next-intl";
 import { locales } from "@/lib/i18n/config";
 
@@ -12,8 +11,6 @@ const localeLabels: Record<string, string> = {
 
 export function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -28,7 +25,9 @@ export function LanguageSwitcher() {
   }, []);
 
   function switchLocale(next: string) {
-    router.push(pathname, { locale: next as typeof locales[number] });
+    const currentPath = window.location.pathname;
+    const newPath = currentPath.replace(/^\/(de|en)/, `/${next}`);
+    window.location.href = newPath + window.location.search;
     setOpen(false);
   }
 

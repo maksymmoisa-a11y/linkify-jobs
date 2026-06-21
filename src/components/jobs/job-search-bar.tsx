@@ -1,8 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
-import { useRouter } from "@/lib/i18n/routing";
+import { useTranslations, useLocale } from "next-intl";
+import { SearchSuggestions } from "./search-suggestions";
+
+const POPULAR_TITLES = [
+  "Software Developer", "Frontend", "Backend", "Fullstack",
+  "DevOps", "Data Engineer", "React", "Python", "Java",
+  "Projektmanager", "Product Owner", "QA Engineer",
+  "Machine Learning", "Cloud Architect", "Security Engineer",
+  "Mobile Developer", "UI/UX Designer", "Scrum Master"
+];
+
+const POPULAR_CITIES = [
+  "Berlin", "München", "Hamburg", "Frankfurt", "Köln",
+  "Stuttgart", "Düsseldorf", "Leipzig", "Nürnberg", "Hannover",
+  "Dresden", "Mannheim", "Dortmund", "Essen", "Bremen"
+];
 
 interface JobSearchBarProps {
   initialQuery?: string;
@@ -12,7 +26,7 @@ interface JobSearchBarProps {
 export function JobSearchBar({ initialQuery = "", initialLocation = "" }: JobSearchBarProps) {
   const t = useTranslations("common");
   const tJobs = useTranslations("jobs");
-  const router = useRouter();
+  const locale = useLocale();
 
   const [query, setQuery] = useState(initialQuery);
   const [location, setLocation] = useState(initialLocation);
@@ -23,7 +37,7 @@ export function JobSearchBar({ initialQuery = "", initialLocation = "" }: JobSea
     if (query.trim()) params.set("q", query.trim());
     if (location.trim()) params.set("location", location.trim());
     params.set("page", "1");
-    router.push(`/jobs?${params.toString()}`);
+    window.location.href = `/${locale}/jobs?${params.toString()}`;
   }
 
   return (
@@ -34,7 +48,7 @@ export function JobSearchBar({ initialQuery = "", initialLocation = "" }: JobSea
     >
       {/* Keyword input */}
       <div className="relative flex-1 min-w-0">
-        <div className="pointer-events-none absolute inset-y-0 left-3 flex items-center">
+        <div className="pointer-events-none absolute inset-y-0 left-3 flex items-center z-10">
           <svg
             className="h-4 w-4 text-gray-400"
             viewBox="0 0 20 20"
@@ -48,12 +62,11 @@ export function JobSearchBar({ initialQuery = "", initialLocation = "" }: JobSea
             />
           </svg>
         </div>
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
+        <SearchSuggestions
+          suggestions={POPULAR_TITLES}
           placeholder={tJobs("searchKeywordPlaceholder")}
-          aria-label={t("search")}
+          value={query}
+          onChange={setQuery}
           className="w-full rounded-xl border border-gray-200 bg-gray-50 py-3 pl-9 pr-4 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-100 transition sm:border-transparent sm:bg-transparent sm:focus:bg-transparent sm:focus:ring-0 sm:focus:border-transparent"
         />
       </div>
@@ -63,7 +76,7 @@ export function JobSearchBar({ initialQuery = "", initialLocation = "" }: JobSea
 
       {/* Location input */}
       <div className="relative flex-1 min-w-0 mt-2 sm:mt-0">
-        <div className="pointer-events-none absolute inset-y-0 left-3 flex items-center">
+        <div className="pointer-events-none absolute inset-y-0 left-3 flex items-center z-10">
           <svg
             className="h-4 w-4 text-gray-400"
             viewBox="0 0 20 20"
@@ -77,12 +90,11 @@ export function JobSearchBar({ initialQuery = "", initialLocation = "" }: JobSea
             />
           </svg>
         </div>
-        <input
-          type="text"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
+        <SearchSuggestions
+          suggestions={POPULAR_CITIES}
           placeholder={tJobs("locationPlaceholder")}
-          aria-label={tJobs("filters.location")}
+          value={location}
+          onChange={setLocation}
           className="w-full rounded-xl border border-gray-200 bg-gray-50 py-3 pl-9 pr-4 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-100 transition sm:border-transparent sm:bg-transparent sm:focus:bg-transparent sm:focus:ring-0 sm:focus:border-transparent"
         />
       </div>

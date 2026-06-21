@@ -1,8 +1,14 @@
 "use client";
 
-import { useState, useTransition } from "react";
-import { useTranslations } from "next-intl";
-import { useRouter } from "@/lib/i18n/routing";
+import { useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { SearchSuggestions } from "./search-suggestions";
+
+const POPULAR_CITIES = [
+  "Berlin", "München", "Hamburg", "Frankfurt", "Köln",
+  "Stuttgart", "Düsseldorf", "Leipzig", "Nürnberg", "Hannover",
+  "Dresden", "Mannheim"
+];
 
 interface JobFiltersProps {
   initialLocation?: string;
@@ -20,9 +26,7 @@ export function JobFilters({
   initialMatchMin = 0,
 }: JobFiltersProps) {
   const t = useTranslations("jobs");
-  const tCommon = useTranslations("common");
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
+  const locale = useLocale();
 
   const [location, setLocation] = useState(initialLocation);
   const [salaryMin, setSalaryMin] = useState(initialSalaryMin?.toString() ?? "");
@@ -32,13 +36,7 @@ export function JobFilters({
 
   function handleApply(e: React.FormEvent) {
     e.preventDefault();
-
-    // Preserve existing query/page params from the URL
-    const current = new URLSearchParams(
-      typeof window !== "undefined" ? window.location.search : ""
-    );
-
-    // Keep q param if present
+    const current = new URLSearchParams(window.location.search);
     const q = current.get("q");
     const params = new URLSearchParams();
     if (q) params.set("q", q);
@@ -48,21 +46,11 @@ export function JobFilters({
     if (remote) params.set("remote", "1");
     if (matchMin > 0) params.set("matchMin", matchMin.toString());
     params.set("page", "1");
-
-    startTransition(() => {
-      router.push(`/jobs?${params.toString()}`);
-    });
+    window.location.href = `/${locale}/jobs?${params.toString()}`;
   }
 
   function handleReset() {
-    setLocation("");
-    setSalaryMin("");
-    setSalaryMax("");
-    setRemote(false);
-    setMatchMin(0);
-    startTransition(() => {
-      router.push("/jobs");
-    });
+    window.location.href = `/${locale}/jobs`;
   }
 
   return (
@@ -80,13 +68,12 @@ export function JobFilters({
           >
             {t("filters.location")}
           </label>
-          <input
+          <SearchSuggestions
             id="filter-location"
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            suggestions={POPULAR_CITIES}
             placeholder="z.B. Berlin, München"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-100 transition"
+            value={location}
+            onChange={setLocation}
           />
         </div>
 
@@ -165,16 +152,14 @@ export function JobFilters({
         <div className="flex flex-col gap-2 pt-1">
           <button
             type="submit"
-            disabled={isPending}
-            className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-60"
+            className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
           >
-            {isPending ? tCommon("loading") : t("applyFilters")}
+            {t("applyFilters")}
           </button>
           <button
             type="button"
             onClick={handleReset}
-            disabled={isPending}
-            className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors disabled:opacity-60"
+            className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors"
           >
             {t("resetFilters")}
           </button>
