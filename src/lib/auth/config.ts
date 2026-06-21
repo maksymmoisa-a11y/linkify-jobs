@@ -55,9 +55,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60,
   },
-  pages: {
-    signIn: "/auth",
-  },
+  // pages.signIn removed — use Auth.js built-in signin page
+  // Our /auth page links to /api/auth/signin which handles CSRF
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
