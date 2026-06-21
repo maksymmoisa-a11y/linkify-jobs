@@ -18,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 interface JobsPageProps {
+  params: Promise<{ locale: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
@@ -33,7 +34,8 @@ function getNumber(v: string | string[] | undefined): number | undefined {
   return isNaN(n) ? undefined : n;
 }
 
-export default async function JobsPage({ searchParams }: JobsPageProps) {
+export default async function JobsPage({ params: paramsPromise, searchParams }: JobsPageProps) {
+  const { locale } = await paramsPromise;
   const params = await searchParams;
   const t = await getTranslations("jobs");
   const tCommon = await getTranslations("common");
@@ -78,7 +80,7 @@ export default async function JobsPage({ searchParams }: JobsPageProps) {
       <div className="border-b border-gray-200 bg-white px-4 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <h1 className="mb-4 text-2xl font-bold text-gray-900">{t("title")}</h1>
-          <JobSearchBar initialQuery={query} initialLocation={location} />
+          <JobSearchBar initialQuery={query} initialLocation={location} locale={locale} />
         </div>
       </div>
 
@@ -88,11 +90,12 @@ export default async function JobsPage({ searchParams }: JobsPageProps) {
           {/* Filters sidebar */}
           <div className="w-full shrink-0 lg:w-64 xl:w-72">
             <JobFilters
+              locale={locale}
+              initialQuery={query}
               initialLocation={location}
               initialSalaryMin={salaryMin}
               initialSalaryMax={salaryMax}
               initialRemote={remote}
-              initialMatchMin={matchMin}
             />
           </div>
 
