@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { LoginButtons } from "@/components/auth/login-buttons";
 import { DevLoginForm } from "@/components/auth/dev-login-form";
+import { GuestButton } from "@/components/auth/guest-button";
 
 export default function AuthPage() {
   const t = useTranslations("auth");
@@ -30,6 +31,9 @@ export default function AuthPage() {
 
           {/* OAuth Buttons */}
           <LoginButtons callbackUrl="/app" />
+
+          {/* Guest */}
+          <GuestButton />
 
           {/* Dev Login */}
           <DevLoginForm />
