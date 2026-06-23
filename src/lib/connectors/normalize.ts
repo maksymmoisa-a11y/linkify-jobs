@@ -100,24 +100,8 @@ export async function normalizeAndUpsertJobs(
     upserted += batch.length;
   }
 
-  // Deactivate jobs from this portal that were NOT seen in this sync.
-  // Pass the seen IDs as a PostgreSQL text array to avoid per-parameter limits.
-  const seenExternalIds = jobs.map((j) => j.externalId);
-
-  if (seenExternalIds.length > 0) {
-    await db
-      .update(schema.jobs)
-      .set({ isActive: false })
-      .where(
-        and(
-          eq(schema.jobs.sourcePortal, sourcePortal),
-          eq(schema.jobs.isActive, true),
-          // Use a native PostgreSQL array ANY check — one parameter regardless of list size
-          sql`${schema.jobs.externalId} IS NOT NULL
-              AND NOT (${schema.jobs.externalId} = ANY(${sql`${seenExternalIds}::text[]`}))`
-        )
-      );
-  }
+  // Skip deactivation during incremental syncs — only deactivate on full portal re-sync
+  // This prevents marking jobs as inactive when we only fetch a subset of keywords
 
   return upserted;
 }
