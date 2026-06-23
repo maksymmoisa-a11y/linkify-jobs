@@ -2,12 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth/config";
 import { db } from "@/lib/db";
 import { bundesagenturConnector } from "@/lib/connectors/bundesagentur";
+import { adzunaConnector } from "@/lib/connectors/adzuna";
 import { normalizeAndUpsertJobs } from "@/lib/connectors/normalize";
 import type { JobConnector } from "@/lib/connectors/types";
 
 // Registry of available connectors, keyed by slug
 const connectors: Record<string, JobConnector> = {
   bundesagentur: bundesagenturConnector,
+  adzuna: adzunaConnector,
 };
 
 interface SyncRequestBody {
